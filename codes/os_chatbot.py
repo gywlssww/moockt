@@ -17,6 +17,7 @@ def hello():
     }
     return render_template('main.html', **templateData)
 
+#### 카카오 오픈 빌더에 등록한 스킬 서버 
 @app.route("/message",methods=['POST'])
 def message():
     req=request.get_json()
