@@ -12,6 +12,8 @@
  
 
 ## To-Do's (~9/14)
-
+  - 시스템 통합
+  - QnA dataset 
+  - QnA 자동 생성 NLP Model 조사
 
 
