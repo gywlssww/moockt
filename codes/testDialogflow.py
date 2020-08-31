@@ -44,17 +44,6 @@ def detect_intent_texts(text,language):
     print(type(res))
     return res
 
-def definition(input_os_norm):
-    os_norm=''.join(input_os_norm.split())
-    with open("definition.json","r") as f:
-        definition_dict=json.load(f)
-    try:    
-        answer=definition_dict[os_norm]
-    except KeyError:
-        answer="답을 구할 수 없습니다."
-    
-    return answer
-
 def customanswer(intent,input_os_norm):
     if intent=="contrast":
         temp=""
