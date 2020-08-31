@@ -16,9 +16,6 @@ def hello():
         'result':result
     }
     return render_template('main.html', **templateData)
-@app.route("/definition",methods=['POST'])
-def definition():
-    return "defition"
 
 @app.route("/message",methods=['POST'])
 def message():
