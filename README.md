@@ -18,6 +18,6 @@
 ## To-Do's (~9/14)
   - 시스템 통합
   - 챗봇 모델 튜닝 
-  - QnA 자동 생성 NLP Model 조사
+  - QnA 자동 생성 NLP Model
 
 
