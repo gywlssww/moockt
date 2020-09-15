@@ -11,7 +11,7 @@ import sys
 import aiml
 #from configs import DEFINES
 #from common import *
-
+from testDialogflow import *
 from konlpy.tag import Okt
 
 IP = "114.70.21.89"
