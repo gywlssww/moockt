@@ -9,10 +9,9 @@ import os
 import sys
 #import model as ml
 import aiml
-from dlf_server.codes.testDialogflow import detect_intent_texts
 #from configs import DEFINES
 #from common import *
-
+from testDialogflow import *
 from konlpy.tag import Okt
 
 IP = "114.70.21.89"
@@ -47,46 +46,46 @@ class Chatbot():
             # message processing...
             data = {}
             data['contents'] = message
-            kern = aiml.Kernel()
+            # kern = aiml.Kernel()
 
-            brainLoaded = False
-            forceReload = False
-            while not brainLoaded:
-                if forceReload or (len(sys.argv) >= 2 and sys.argv[1] == "reload"):
-                    kern.bootstrap(learnFiles="aiml-server/std-startup.xml", commands="load aiml b")
-                    brainLoaded = True
-                    # kern.saveBrain("standard.brn")
-                else:
-                    try:
-                        kern.bootstrap(brainFile = "aiml-server/standard.brn")
-                        brainLoaded = True
-                    except:
-                        forceReload = True
+            # brainLoaded = False
+            # forceReload = False
+            # while not brainLoaded:
+            #     if forceReload or (len(sys.argv) >= 2 and sys.argv[1] == "reload"):
+            #         kern.bootstrap(learnFiles="aiml-server/std-startup.xml", commands="load aiml b")
+            #         brainLoaded = True
+            #         # kern.saveBrain("standard.brn")
+            #     else:
+            #         try:
+            #             kern.bootstrap(brainFile = "aiml-server/standard.brn")
+            #             brainLoaded = True
+            #         except:
+            #             forceReload = True
 
             # Enter the main input/output loop.
             # print("\nINTERACTIVE MODE (ctrl-c to exit)")
             
             # ============ AIML ===============
-            s = data["contents"]
-            res = okt.pos(s)
-            content = ""
-            for word in res:
-                if (word[1] == "Josa"):
-                    content = content + " "+word[0]+" "
-                else:
-                    content = content+ word[0]
-            response = kern.respond(content)
-            print("tokenized : ",response)
-            if response == "해당되는 내용이 없습니다.":
-                response = kern.respond(data["contents"])
-            print("row or tokenized : ",response)
+            # s = data["contents"]
+            # res = okt.pos(s)
+            # content = ""
+            # for word in res:
+            #     if (word[1] == "Josa"):
+            #         content = content + " "+word[0]+" "
+            #     else:
+            #         content = content+ word[0]
+            # response = kern.respond(content)
+            # print("tokenized : ",response)
+            # if response == "해당되는 내용이 없습니다.":
+            #     response = kern.respond(data["contents"])
+            # print("row or tokenized : ",response)
 
             # ============ DIALOGFLOW ===============            
             # if response == "해당되는 내용이 없습니다.":
 
-            # language = "ko"
-            # msg = data["contents"]
-            # response = detect_intent_texts(msg,language)
+            language = "ko"
+            msg = data["contents"]
+            response = detect_intent_texts(msg,language)
              
             answer = response
    
