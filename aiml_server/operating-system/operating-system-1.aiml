@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+ <category>
+    <pattern>효율성이란
+</pattern>
+ <template>하드웨어를 얼만큼 쉬지 않고 사용하는지에 관한 지표로 하나의 컴퓨터로 많은 프로그램을 돌리는 것입니다. 
+</template>
+ </category>
+ <category>
+    <pattern>편의성이란
+</pattern>
+ <template>사용자가 얼만큼 불편함 없이 사용할 수 있는지에 관한 지표로 효율성만 극대화한다면 사용자들은 서로 하드웨어 자원을 나누어 사용하여야 하기 때문에 속도가 느려지거나 자원을 사용하기 위해 기다려야하므로 편의성이 매우 떨어질 것입니다.
+</template>
+ </category>
+ <category>
+    <pattern>배치란
+</pattern>
+ <template>하나의 묶음을 의미하며 Batch System은 한 번에 하나의 작업만 처리할 수 있는 시스템입니다.
+</template>
+ </category>
+ <category>
+    <pattern>디바이스 드라이버란
+</pattern>
+ <template>디바이스 (장치) 란 컴퓨터에 연결된 주변기기들을 의미하며 이런 각각의 하드웨어 장치를 제어하는 기능을 가진 프로그램이 드라이버입니다.
+</template>
+ </category>
+ <category>
+    <pattern>자원에는 어떤 것이 있을까요
+</pattern>
+ <template>컴퓨터에서 자원이란 하드웨어를 뜻합니다. 예) 메모리, CPU, 주변장치, 통신용량 등
+</template>
+ </category>
+ <category>
+    <pattern>상주모니터가 하는 일은
+</pattern>
+ <template>항상 주기억장치에 위치하여, 처음 컴퓨터가 부팅할 때 상주모니터가 구동됩니다. CPU의 유휴시간을 극복하기 위해 하나의 작업에서 다음 작업으로 진행하기 위한 제어를 자동으로 처리할 수 있는 프로그램을 통칭하여 상주모니터라 합니다. 대표적인 예) ISR
+</template>
+ </category>
+ <category>
+    <pattern>다중프로그래밍에서 프로그램이 바뀌는 시점은
+</pattern>
+ <template>실행중인 프로그램이 입출력이 일어날 때마다 스케쥴링을 통해 다음으로 수행할 프로그램을 선정합니다.
+</template>
+ </category>
+ <category>
+    <pattern>초기일괄처리시스템의 한계점은</pattern>
+    <template>배치라는 일괄처리 작업을 오퍼레이터(사람)가 하다 보니 정확도가 떨어지거나 불공정하기도 하여 이에 대한 개선이 필요했습니다.</template>
+ </category>
+  <category>
+    <pattern>*</pattern>
+    <template>해당되는 내용이 없습니다.</template>
+ </category>
+</aiml>

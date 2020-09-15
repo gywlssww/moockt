@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+ <category>
+    <pattern>명령레지스터란
+</pattern>
+ <template>장치에게 쓰기나 읽기 등의 동작을 명령하기 위한 명령코드를 적재하는 용도로 사용됩니다.
+</template>
+ </category>
+ <category>
+    <pattern>상태레지스터란
+</pattern>
+ <template>현재 해당 장치에 오류가 있는지, 또는 작업이 진행 중에 있는지, 작업을 끝내고 쉬고 있는지 등 장치의 상태를 체크해 보는 용도로 사용됩니다.
+</template>
+ </category>
+ <category>
+    <pattern>자료레지스터란
+</pattern>
+ <template>명령레지스터를 통해 명령한 동작을 실행하는 데에 있어서 오고갈 데이터를 읽고 쓰기 위한 일종의 버퍼 같은 용도로 사용됩니다.
+</template>
+ </category>
+ <category>
+    <pattern>직접입출력방식이란
+</pattern>
+ <template>직접 입출력 방식은 말그대로 CPU가 장치제어기 내의 자료 레지스터와 메모리 간의 자료 이동을 매번 직접 관장하는 것입니다. 이미 배운 바와 같이 CPU는 기본적으로 입출력 장치가 입출력을 하는 중에도 프로세스 수행을 할 수 있도록 되어 있지만 매 입출력시 인터럽트를 처리해야 하므로 부담이 될 수 있습니다. 따라서 이 방법은 입출력 발생의 시간 간격이 비교적 큰 문자장치, 가장 대표적으로 키보드를 들 수 있는데요, 우리가 흔히 부르는 시리얼 입출력 장치에 주로 사용합니다. 
+</template>
+ </category>
+ <category>
+    <pattern>DMA방식이란
+</pattern>
+ <template>Direct Memory Access 방식은 말그대로 입출력 장치가 CPU의 도움없이 독자적으로 메모리에 접근하도록 하여 한 입출력 명령으로 블록 단위의 입출력이 가능하도록 하는 방식입니다.
+</template>
+ </category>
+ <category>
+    <pattern>폴링방식이란
+</pattern>
+ <template>CPU가 상태레지스터를 반복적으로 체크하면서 목표한 상태로 바뀌었는지를 체크하는 것입니다. 따라서 상태변화가 있을 때까지 대기하는 거나 다름없는거죠.
+</template>
+ </category>
+ <category>
+    <pattern>FastInterrupt란
+</pattern>
+ <template>특별히 빠른 처리 혹은 빠른 반응을 위해 인터럽트 핸들러 즉 ISR에서 다른 인터럽트 처리를 disable시키고 짧은 시간에 처리를 마무리하는 것을 말합니다.  물론 이 fast interrupt 처리를 너무 많이 하면 시스템 전체의 반응성을 떨어뜨리기 때문에 특별한 경우에만 사용해야 하는데요 예를 들면 타임 크리티컬한 측면이 있는 클럭 인터럽트가 그 예가 되겠습니다. 
+</template>
+ </category>
+ <category>
+    <pattern>보호란
+</pattern>
+ <template>본 강의에서는 영어로 protection을 의미합니다. 즉, 소프트웨어로 만들어진 커널이 응용프로그램에 의하여 문제가 발생하는 경우가 있는데 어떻게 이를 하드웨어의 도움을 받아 protect할 수 있는지에 대하여 살펴보도록 하겠습니다.
+</template>
+ </category>
+ <category>
+    <pattern>이중모드란
+</pattern>
+ <template>이중모드란 커널모드와 사용자모드를 분리하는 것을 이야기 하는 것인데요. 기본적으로 메인메모리를 사용자 프로그램이 탑재되는 사용자 공간과 커널 프로그램이 탑재되는 커널공간으로 나누고 CPU가 사용자공간의 프로그램을 수행할 때는 사용자 모드로 수행하도록하고 커널 공간의 프로그램을 수행할 때에는 반드시 커널 모드로만 수행하도록 하는 겁니다.
+</template>
+ </category>
+ <category>
+    <pattern>HitRatio란
+</pattern>
+ <template>찾는 데이터가 캐시에 있을 확률을 말합니다. Hit Ratio가 높을 수록 캐시를 사용하는 효과가 증가합니다.
+</template>
+ </category>
+ <category>
+    <pattern>시스템호출의유형은
+</pattern>
+ <template>프로세스 제어, 파일 조작, 주변장치 조작, 정보 관리, 통신 등입니다.
+</template>
+ </category>
+ <category>
+    <pattern>입출력시스템의레지스터종류는
+</pattern>
+ <template>명령레지스터, 상태레지스터, 자료레지스터가 있습니다.
+</template>
+ </category>
+ <category>
+    <pattern>입출력시스템의하드웨어인터페이스에서경영방식은무엇이있나요
+</pattern>
+ <template>첫번째로는 아까 잠시 언급한 바가 있는데 장치제어기 안에 있는 레지스터들을 접근하는 방식에는 어떤 방식들이 있는가 하는 것입니다. 이것을 위해 격리형과 메모리 사상형에 대하여 설명할 것입니다. 두번째로는 디바이스 드라이버가 장치제어기 내에 준비된 자료를 가져오고, 또한 디바이스 드라이버가 갖고 있는 자료를 장치제어기로 넘겨주는 방식에는 어떤 방식들이 있는지입니다. 이것을 위해 직접 입출력 방식과 DMA 방식에 대하여 설명할 것입니다. 세번째로는 장치제어기에서 벌어진 상태변화를 디바이스 드라이버에게 알리는 방식에는 어떤 방식들이 있는가 하는 것입니다. 이것을 위해 폴링과 인터럽트에 대하여 설명할 것입니다.
+</template>
+ </category>
+ <category>
+    <pattern>디바이스드라이버가레지스터에접근하는방식은
+</pattern>
+ <template>격리형 입출력 방식 (isolated I O) 과 메모리 사상 방식이 있습니다.
+</template>
+ </category>
+ <category>
+    <pattern>자료 이동 방식의 종류는
+</pattern>
+ <template>직접 입출력 방식와 DMA 방식이 있습니다.
+</template>
+ </category>
+ <category>
+    <pattern>특권 명령으로 접근할 수 있는 레지스터는
+</pattern>
+ <template>베이스 레지스터와 리미트 레지스터입니다.
+</template>
+ </category>
+ <category>
+    <pattern>기억장치의 차이는 무엇이 있나요
+</pattern>
+ <template>가격, 속도, 용량, 휘발성 등이 있습니다.
+</template>
+ </category>
+ <category>
+    <pattern>인터럽트 마스크를 통해 Interrupt priority level을 적용하는 이유는 뭔가요
+</pattern>
+ <template>사실 인터럽트는 시스템 내에 한가지만 있는 것은 아니죠, 다양한 입출력 장치에서 인터럽트가 들어오게 되어 있습니다. 그렇게 되면 이러한 여러 종류의 인터럽트 간에 경쟁 내지는 충돌이 있을 수 있는데, 이를 조정하기 위하여 인터럽트 우선순위 수준 즉 interrupt priority level이 적용되게 되며, 이러한 수준이 여러 수준이 있을 것이므로 이를 다수준 인터럽트 시스템이 부르기도 합니다. 여기서 각 인터럽트의 수준은 시스템 개발자에 의하여 어느정도 고정이 되어 있다고 보면 되겠지만, 프로그래머블 하게 되어 있어 조정도 가능합니다. 
+</template>
+ </category>
+ <category>
+    <pattern>격리형 입출력 방식의 장점은
+</pattern>
+ <template>입출력이 메모리 주소 공간의 크기나 할당에 영향을 주지 않는다는 것입니다.
+</template>
+ </category>
+ <category>
+    <pattern>격리형 입출력 방식의 단점은
+</pattern>
+ <template>메모리 접근 명령어와는 별도의 입출력 명령어를 사용하게 되어 프로그래밍의 일관성이나 이식성이 떨어진다는 것입니다.
+</template>
+ </category>
+ <category>
+    <pattern>메모리 사상형 입출력 방식의 장점은
+</pattern>
+ <template>메모리 주소와 입출력 주소가 단일 주소공간 내에 존재하므로 메모리 접근을 위한 일반적인 명령어인 로드, 스토어 같은 명령어를 사용할 수 있어 명령어 개수를 줄여 프로그래밍이 용이하고 일관성과 이식성이 좋다는 점입니다.
+</template>
+ </category>
+ <category>
+    <pattern>메모리 사상형 입출력 방식의 단점은
+</pattern>
+ <template>입출력을 위하여 메모리의 일부를 사용하므로 메모리 영역이 감소된다는 점이 되겠습니다.
+</template>
+ </category>
+ <category>
+    <pattern>직접 입출력 방식의 단점은
+</pattern>
+ <template>대용량의 입출력을 위한 장치 (예: 하드디스크) 에 사용하기에 적절하지 않습니다. 블록의 단위가 보통 512바이트라고 볼 때 고속 입출력을 위해서는 블록 단위로 인터럽트를 처리해야지, 한 블록의 입출력을 위해 512번의 인터럽트를 처리할 수는 없는 노릇이기 때문입니다.
+</template>
+ </category>
+ <category>
+    <pattern>폴링 방식의 단점은
+</pattern>
+ <template>폴링 방식은 보통 busy-waiting의 경우로 계속 루프를 돌아서 CPU 시간을 낭비합니다.
+</template>
+ </category>
+   <category>
+    <pattern>*</pattern>
+    <template>해당되는 내용이 없습니다.</template>
+ </category>
+</aiml>
+
