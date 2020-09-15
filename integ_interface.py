@@ -67,26 +67,26 @@ class Chatbot():
             # print("\nINTERACTIVE MODE (ctrl-c to exit)")
             
             # ============ AIML ===============
-            # s = data["contents"]
-            # res = okt.pos(s)
-            # content = ""
-            # for word in res:
-            #     if (word[1] == "Josa"):
-            #         content = content + " "+word[0]+" "
-            #     else:
-            #         content = content+ word[0]
-            # response = kern.respond(content)
-            # print("tokenized : ",response)
-            # if response == "해당되는 내용이 없습니다.":
-            #     response = kern.respond(data["contents"])
-            # print("row or tokenized : ",response)
+            s = data["contents"]
+            res = okt.pos(s)
+            content = ""
+            for word in res:
+                if (word[1] == "Josa"):
+                    content = content + " "+word[0]+" "
+                else:
+                    content = content+ word[0]
+            response = kern.respond(content)
+            print("tokenized : ",response)
+            if response == "해당되는 내용이 없습니다.":
+                response = kern.respond(data["contents"])
+            print("row or tokenized : ",response)
 
             # ============ DIALOGFLOW ===============            
             # if response == "해당되는 내용이 없습니다.":
-            
-            language = "ko"
-            msg = data["contents"]
-            response = detect_intent_texts(msg,language)
+
+            # language = "ko"
+            # msg = data["contents"]
+            # response = detect_intent_texts(msg,language)
              
             answer = response
    
