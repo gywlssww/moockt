@@ -15,9 +15,9 @@ from testDialogflow import *
 from konlpy.tag import Okt
 
 IP = "114.70.21.89"
-PORT = 9005
+PORT = 9006
 #KEY = urandom()
-NAME = "Chatbot5"
+NAME = "DIALOGFLOW_CHATBOT_1"
 BROKER_ADDR = ("114.70.21.89", 8000)
 okt = Okt()
 
@@ -133,3 +133,4 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         chatbot.stop()
         print("Clean up chatbot!")
+

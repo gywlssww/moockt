@@ -17,7 +17,7 @@ from konlpy.tag import Okt
 IP = "114.70.21.89"
 PORT = 9005
 #KEY = urandom()
-NAME = "Chatbot5"
+NAME = "AIML_CHATBOT_1"
 BROKER_ADDR = ("114.70.21.89", 8000)
 okt = Okt()
 
