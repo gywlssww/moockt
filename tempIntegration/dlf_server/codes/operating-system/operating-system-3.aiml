@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+ <category>
+    <pattern>프로세스란
+</pattern>
+ <template>실행 중인 프로그램을 말합니다.
+</template>
+ </category>
+ <category>
+    <pattern>사용자프로세스란
+</pattern>
+ <template>응용 프로그램이 실행되는 것을 말합니다.
+</template>
+ </category>
+   <category>
+    <pattern>*</pattern>
+    <template>해당되는 내용이 없습니다.</template>
+ </category>
+</aiml>
