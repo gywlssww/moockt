@@ -15,7 +15,7 @@ from testDialogflow import *
 from konlpy.tag import Okt
 
 IP = "114.70.21.89"
-PORT = 9006
+PORT = 9005
 #KEY = urandom()
 NAME = "DIALOGFLOW_CHATBOT_1"
 BROKER_ADDR = ("114.70.21.89", 8000)
