@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+   <head>
+      <title>{{ title }}</title>
+   </head>
+
+   <body>
+      <h1>Hello, World!</h1>
+      <h2>The date and time on the server is: {{ time }}</h2>
+      <div id="button">
+         <h3 name="result">dialogflow: {{result}}</h3>
+         <input type = "button" onclick = "load();" name = "Load" value = "Load" />
+         <input type = "button" onclick = "play();" name = "Play" value = "Play" />
+         <input type = "button" onclick = "pause();" name = "Stop" value = "Stop" />
+         <input type = "button" onclick = "prev();" name = "Prev" value = "Prev" />
+         <input type = "button" onclick = "post();" name = "Post" value = "Post" />
+      </div>
+      <div id="ytplayer"></div>
+
+      <script>
+        // Load the IFrame Player API code asynchronously.
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/player_api";
+
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      
+        // Replace the 'ytplayer' element with an <iframe> and
+        // YouTube player after the API code downloads.
+        var player;
+        function onYouTubePlayerAPIReady() {
+          player = new YT.Player('ytplayer', {
+            height: '360',
+            width: '640',
+            videoId: 'oU5IV35puhY'
+          });
+        }
+        function load(){
+         player. loadVideoById("bHQqvYy5KYo", 5, "large") 
+
+        }
+
+        function play(){
+         player.playVideo()
+        }
+        function pause(){
+         player.pauseVideo()
+        }
+        function prev(){
+         player.seekTo(player.getCurrentTime()-5)
+        }
+        function post(){
+         player.seekTo(player.getCurrentTime()+10)
+        }
+      </script>
+
+   </body>
+</html>
+
+

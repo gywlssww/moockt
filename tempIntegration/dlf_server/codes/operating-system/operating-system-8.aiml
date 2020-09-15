@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+ <category>
+    <pattern>논리주소란</pattern>
+    <template>실행중인 프로그램관점에서의 논리적 주소이다.</template>
+ </category>
+ <category>
+    <pattern>물리주소란</pattern>
+    <template>프로그램이 실제로 탑재된 메인메모리 의주소이다.</template>
+ </category>
+ <category>
+    <pattern>주소결속이란</pattern>
+    <template>논리주소가물리주소로확정되는것이다.</template>
+ </category>
+  <category>
+    <pattern>주소결속이 *</pattern>
+    <template>논리주소가물리주소로확정되는것이다.</template>
+ </category>
+ <category>
+    <pattern>논리주소와물리주소의차이점은</pattern>
+    <template>논리주소는프로그램내의주소이고물리주소는탑재된메인메모리의주소이다.</template>
+ </category>
+  <category>
+    <pattern>논리주소 * 물리주소 * 차이점 *</pattern>
+    <template>논리주소는프로그램내의주소이고물리주소는탑재된메인메모리의주소이다.</template>
+ </category>
+  <category>
+    <pattern>논리주소가 *</pattern>
+    <template>실행중인 프로그램관점에서의 논리적 주소이다.</template>
+ </category>
+  <category>
+    <pattern>물리주소가 *</pattern>
+    <template>프로그램이 실제로 탑재된 메인메모리의 주소이다.</template>
+ </category>
+  <category>
+    <pattern>논리주소란 *</pattern>
+    <template>실행중인 프로그램관점에서의 논리적 주소이다.</template>
+ </category>
+  <category>
+    <pattern>물리주소란 *</pattern>
+    <template>프로그램이 실제로 탑재된 메인메모리의 주소이다.</template>
+ </category>
+ <category>
+    <pattern>컴파일시점결속이란</pattern>
+    <template>컴파일러가물리주소를생성하는것이다.</template>
+ </category>
+ <category>
+    <pattern>적재시점결속이란</pattern>
+    <template>프로그램이메인메모리에적재될때물리적주소로변환하는것이다.</template>
+ </category>
+ <category>
+    <pattern>실행시점결속이란</pattern>
+    <template>논리주소인채로적재한후MMU를통해물리주소를확정하는것이다.</template>
+ </category>
+ <category>
+    <pattern>MMU란</pattern>
+    <template>하드웨어장치메모리관리장치이다.</template>
+ </category>
+ <category>
+    <pattern>실행시점결속의장점은</pattern>
+    <template>재배치와부분적재가가능해서메모리경영의유연성이높아진다.</template>
+ </category>
+ <category>
+    <pattern>메모리경영기법의종류란</pattern>
+    <template>분할방법과페이징그리고가상메모리가있다.</template>
+ </category>
+ <category>
+    <pattern>분할방법이란</pattern>
+    <template>메모리공간을여러개로분할하는방법이다.</template>
+ </category>
+ <category>
+    <pattern>페이징이란</pattern>
+    <template>페이지테이블을사용하여논리적공간을물리적공간으로대응시키는방법이다.</template>
+ </category>
+ <category>
+    <pattern>세그먼테이션이란</pattern>
+    <template>가변크기를가진자료구조들의집합을말한다.</template>
+ </category>
+ <category>
+    <pattern>가상메모리란</pattern>
+    <template>프로그램에실제메모리주소가아닌가상의메모리주소를주는방식이다.</template>
+ </category>
+ <category>
+    <pattern>고정분할은</pattern>
+    <template>각메모리공간을고정된크기로나누는것이다.</template>
+ </category>
+ <category>
+    <pattern>가변분할은</pattern>
+    <template>메모리전체를하나의연속된공간으로보고적절한위치에프로그램을적재해주는방식이다.</template>
+ </category>
+ <category>
+    <pattern>분할방법의단점은</pattern>
+    <template>외부단편화가발생할수있다.</template>
+ </category>
+ <category>
+    <pattern>페이징의장점이란</pattern>
+    <template>단편화문제가없고과페이지의공유와보호가가능하다</template>
+ </category>
+ <category>
+    <pattern>페이징의단점이란</pattern>
+    <template>페이지테이블이추가로필요하다.</template>
+ </category>
+ <category>
+    <pattern>페이지테이블이란</pattern>
+    <template>페이징기법에서논리주소를물리주소로대응시키기위한주소변환테이블이다.</template>
+ </category>
+ <category>
+    <pattern>가상메모리의장점이란</pattern>
+    <template>메모리활용도가높아진다.</template>
+ </category>
+ <category>
+    <pattern>단편화란</pattern>
+    <template>메모리공간이작게나뉘어져공간은있지만사용이불가능한상태이다.</template>
+ </category>
+ <category>
+    <pattern>내부단편화란 </pattern>
+    <template>필요이상의메모리가할당되어메모리공간이낭비되는상황이다.</template>
+ </category>
+   <category>
+    <pattern>*</pattern>
+    <template>해당되는 내용이 없습니다.</template>
+ </category>
+</aiml>

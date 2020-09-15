@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+ <category>
+    <pattern>적재란
+</pattern>
+ <template>CPU가 메모리에 있는 데이터를 읽어오는 것을 말합니다.
+</template>
+ </category>
+ <category>
+    <pattern>분할 방법란
+</pattern>
+ <template>고정분할방법은 분할의 단위인 파티션의 크기와 분할의 수가 고정된 것입니다. 가변 분할 방법은 몇 개의 프로그램을 동시에 수행시킬지 정도만 결정하고 메모리 전체를 하나의 연속된 공간으로 보고 적절한 장소에 프로그램을 적재하는 방식입니다.
+</template>
+ </category>
+ <category>
+    <pattern>페이징이란
+</pattern>
+ <template>페이징 방식에서는 가상 메모리상의 주소공간을 일정한 크기의 페이지로 분할 합니다. 실제 메모리 또한 가상메모리와 같은 크기로 페이지를 분할하는데 이 때 대부분 페이지의 크기는 4Kbyte입니다.
+</template>
+ </category>
+ <category>
+    <pattern>사상이란
+</pattern>
+ <template>가상주소와 물리주소의 대응관계 또는 가상 주소로부터 물리 주소를 찾아내는 일을 말한다.
+</template>
+ </category>
+ <category>
+    <pattern>페이지 테이블이란
+</pattern>
+ <template>가상메모리의 페이지와 실제 메모리의 페이지를 연결 시켜주기 위한 매핑 테이블입니다.
+</template>
+ </category>
+ <category>
+    <pattern>프로그램 오버레이란
+</pattern>
+ <template>용량이 큰 프로그램을 분할 가능한 몇 개의 부분으로 나눈 뒤 각 부분의 실행이 필요할 때마다 필요한 부분만 주기억장치로 입력시켜 실행할 수 있게 하는 방법입니다.
+</template>
+ </category>
+ <category>
+    <pattern>외부 단편화란
+</pattern>
+ <template>메모리의 여유 공간이 여러 조각으로 나뉘어 있어 총 메모리 공간은 충분하지만 실제로는 할당할 수 없는 상황을 의미합니다.
+</template>
+ </category>
+ <category>
+    <pattern>트랩이란
+</pattern>
+ <template>어떤 프로세스가 특정 시스템 기능을 사용하려고 할 때 그 기능을 운영체제에게 요청하는 방법을 말합니다.
+</template>
+ </category>
+ <category>
+    <pattern>주소 결속이란
+</pattern>
+ <template>프로세스가 접근해야하는 값과 함수에 대한 주소가 정해지는 것을 말한다.
+</template>
+ </category>
+ <category>
+    <pattern>로더란
+</pattern>
+ <template>컴퓨터 내부로 정보를 들여오거나 로드 모듈을 디스크 등의 보조기억장치로 부터 주 기억 장치에 적재하는 시스템 소프트웨어
+</template>
+ </category>
+ <category>
+    <pattern>세마포란
+</pattern>
+ <template>공유된 자원의 데이터를 여러 프로세스가 접근하는 것을 막은 것
+</template>
+ </category>
+ <category>
+    <pattern>페이지 테이블의 크기는 고정인가요
+</pattern>
+ <template>ARM 64 커널에서는 페이지 크기로 4KB,16KB,64KB 중 하나를 사용할 수 있는데 이때 기본 크기는 4KB입니다.
+</template>
+ </category>
+ <category>
+    <pattern>페이지 테이블은 메모리의 어디에 위치해있나요
+</pattern>
+ <template>페이지 테이블이 메모리에 존재하면 성능이 하락합니다. 페이지 테이블의 base주소만 별도 레지스터에 저장되고 MMU라는 하드웨어를 통해 물리 메모리에 접근하여 매핑시킵니다.
+</template>
+ </category>
+ <category>
+    <pattern>프로세스마다 할당되는 프레임의 개수가 다른가요
+</pattern>
+ <template>프레임 할당은 정적할당과 동적할당 방식이 있습니다. 동적할당의 경우 실행 중에 프레임을 할당하기 때문에 경우에 따라 다양합니다.
+</template>
+ </category>
+ <category>
+    <pattern>가변분할방식에서 프로그램을 적재하는 공간을 선택하는 기준은
+</pattern>
+ <template>세가지 관점에서 프로그램을 적재할 공간을 선택합니다. 최초적합은 첫번째로 용 가능한 공간에 할당하는 방법, 최적적합은 사용 가능한 공간들 중 가장 작은 것을 선택하는 방법, 최악적합은 가장 큰 공간을 선택하는 방법입니다.
+</template>
+ </category>
+ <category>
+    <pattern>buddy 알고리즘의 최소단위는 페이지 크기 혹은 페이지 크기의 배수인가요
+</pattern>
+ <template>buddy algorithm의 단위는 2의 거듭제곱인데 (slab을 사용하지 않는) 최소 단위는 page size입니다.
+</template>
+ </category>
+ <category>
+    <pattern>TLB에 저장되는 address translation 정보는 한 프로세스에 대해 여러 페이지가 저장될 수 있는 것이 맞나요
+</pattern>
+ <template>네 여러 개의 page가 저장됩니다.
+</template>
+ </category>
+ <category>
+    <pattern>처리율은 어떻게 측정하나요
+</pattern>
+ <template>단위시간(초)에 실행된 작업의 수 또는 명령어의 수를 기준으로 측정합니다.
+</template>
+ </category>
+ <category>
+    <pattern>트랩과 인터럽트의 차이는
+</pattern>
+ <template>인터럽트는 하드웨어적인 흐름의 변화이고 트랩은 소프트웨어적이라 할 수 있습니다. 인터럽트는 장치 폴링 문제 해결을 위해 입출력 장치의 완료 신호로 사용할 수 있고, 트랩은 운영체제 루틴을 호출하거나 산술 오류를 잡아내는데 사용할 수 있습니다.
+</template>
+ </category>
+ <category>
+    <pattern>프로세스 내에서 쓰레드가 수행될 때 다른 프로세스에 의해 소유된 메모리에 접근할 수 있나요
+</pattern>
+ <template>불가능합니다.
+</template>
+ </category>
+   <category>
+    <pattern>*</pattern>
+    <template>해당되는 내용이 없습니다.</template>
+ </category>
+</aiml>
+
