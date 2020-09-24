@@ -9,6 +9,8 @@ import os
 import sys
 #import model as ml
 import aiml
+import csv
+import pickle
 #from configs import DEFINES
 #from common import *
 from testDialogflow import *
@@ -47,47 +49,61 @@ class Chatbot():
             # message processing...
             data = {}
             data['contents'] = message
-            kern = aiml.Kernel()
 
-            brainLoaded = False
-            forceReload = False
-            while not brainLoaded:
-                if forceReload or (len(sys.argv) >= 2 and sys.argv[1] == "reload"):
-                    kern.bootstrap(learnFiles="std-startup.xml", commands="load aiml b")
-                    brainLoaded = True
-                    # kern.saveBrain("standard.brn")
+            # ========== intercept by input data prefix'>'
+            if len(data['contents'])>0 and data['contents'][0]=='>':
+                print(data['contents'][1:])
+                dict_data = data['contents'][1:]
+                fr = open('./script/script_word.pickle','rb')
+                loaded = pickle.load(fr)
+                if dict_data in loaded:
+                    answer = str(loaded[str(dict_data)])
+                    print(answer)
                 else:
-                    try:
-                        kern.bootstrap(brainFile = "standard.brn")
+                    answer = "key: " + str(dict_data)+" is not existed"
+                    print(answer)
+            else:
+                kern = aiml.Kernel()
+
+                brainLoaded = False
+                forceReload = False
+                while not brainLoaded:
+                    if forceReload or (len(sys.argv) >= 2 and sys.argv[1] == "reload"):
+                        kern.bootstrap(learnFiles="std-startup.xml", commands="load aiml b")
                         brainLoaded = True
-                    except:
-                        forceReload = True
+                        # kern.saveBrain("standard.brn")
+                    else:
+                        try:
+                            kern.bootstrap(brainFile = "standard.brn")
+                            brainLoaded = True
+                        except:
+                            forceReload = True
 
-            # Enter the main input/output loop.
-            # print("\nINTERACTIVE MODE (ctrl-c to exit)")
-            
-            # ============ AIML ===============
-            s = data["contents"]
-            res = okt.pos(s)
-            content = ""
-            for word in res:
-                if (word[1] == "Josa"):
-                    content = content + " "+word[0]+" "
-                else:
-                    content = content+ word[0]
-            response = kern.respond(content)
-            print("tokenized : ",response)
-            if response == "해당되는 내용이 없습니다.":
-                response = kern.respond(data["contents"])
-            print("row or tokenized : ",response)
-
-            # ============ DIALOGFLOW ===============            
-            if response == "해당되는 내용이 없습니다.":
-                language = "ko"
-                msg = data["contents"]
-                response = detect_intent_texts(msg,language)
+                # Enter the main input/output loop.
+                # print("\nINTERACTIVE MODE (ctrl-c to exit)")
                 
-            answer = response
+                # ============ AIML ===============
+                s = data["contents"]
+                res = okt.pos(s)
+                content = ""
+                for word in res:
+                    if (word[1] == "Josa"):
+                        content = content + " "+word[0]+" "
+                    else:
+                        content = content+ word[0]
+                response = kern.respond(content)
+                print("tokenized : ",response)
+                if response == "해당되는 내용이 없습니다.":
+                    response = kern.respond(data["contents"])
+                print("row or tokenized : ",response)
+
+                # ============ DIALOGFLOW ===============            
+                if response == "해당되는 내용이 없습니다.":
+                    language = "ko"
+                    msg = data["contents"]
+                    response = detect_intent_texts(msg,language)
+                    
+                answer = response
    
             # creating response message...
             self.wfile.write(answer.encode("utf-8"))
