@@ -52,12 +52,15 @@ class Chatbot():
 
             # ========== intercept by input data prefix'>'
             if len(data['contents'])>0 and data['contents'][0]=='>':
+                answer = ""
                 print(data['contents'][1:])
                 dict_data = data['contents'][1:]
                 fr = open('./script/script_word.pickle','rb')
                 loaded = pickle.load(fr)
                 if dict_data in loaded:
-                    answer = str(loaded[str(dict_data)])
+                    answer = answer + '>'
+                    for ts in loaded[str(dict_data)]:
+                        answer = answer+str(ts)+" "
                     print(answer)
                 else:
                     answer = "key: " + str(dict_data)+" is not existed"
