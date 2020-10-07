@@ -1,7 +1,9 @@
 # moockt
 
 ## Data Preprocessing
-
+- [Question - Anwser] 쌍의 csv 파일
+- 입력 형식은 자유
+- 파일 경로를 generate_dataset.py 에 전달 (default: ../data/os_qna.csv)
 
 ## Model
   1.AIML
