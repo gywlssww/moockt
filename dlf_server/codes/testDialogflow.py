@@ -22,7 +22,7 @@ def detect_intent_texts(text,language):
     session_client = dialogflow.SessionsClient()
 
     session = session_client.session_path(project_id, session_id)
-    intents=['definition', 'cons','contrast','example','pros']
+    intentdict={'definition':"정의", 'cons':"단점",'contrast':"차이점",'example':"예시",'pros':"장점",'feature':"특징",'Default Fallback Intent':"기타"}
     print('Session path: {}\n'.format(session))
     text_input = dialogflow.types.TextInput(text=text, language_code=language_code)
     query_input = dialogflow.types.QueryInput(text=text_input)
@@ -33,16 +33,32 @@ def detect_intent_texts(text,language):
     res=json.loads(res)
     print(res)
     intent=res['queryResult']['intent']['displayName']
-    if intent not in intents:
-        res=res['queryResult']['fulfillmentText']
-    else:
+    try:
         os_norm=res['queryResult']['parameters']['os_norm']
-        res=customanswer(intent,os_norm)
+        os_norm_str=''.join(os_norm) if type(os_norm) is not list else " & ".join(os_norm)
+    except KeyError:
+        os_norm=res['quertResult']['queryText']
+        os_norm_str=os_norm
+        #return "죄송합니다. 답을 구할 수 없습니다."
+    
+    intent_str=intentdict[intent]
+    if intent not in intentdict.keys():
+        #print(res['queryResult'])
+        ret="[%s]\n"%(os_norm_str)
+        try:
+            ret+=res['queryResult']['fulfillmentText']
+        except KeyError:
+            ret+="죄송합니다.답을 구할 수 없습니다."
+    else:
+        ret=("[%s-%s]\n" %(os_norm_str, intent_str))
+        #os_norm=res['queryResult']['parameters']['os_norm']
+        ret+=customanswer(intent,os_norm)
 #    param=res['queryResult']['parameters']['os_norm']
 #    print(param)
     print(res)
     print(type(res))
-    return res
+    return ret
+
 
 def customanswer(intent,input_os_norm):
     if intent=="contrast":
