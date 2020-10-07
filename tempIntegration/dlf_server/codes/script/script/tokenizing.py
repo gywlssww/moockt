@@ -50,3 +50,4 @@ content = ""
 # data['contents'] = ">안녕"
 # if len(data['contents'])>0 and data['contents'][0]=='>':
 #     print(data['contents'])
+#     print(data['contents'][1:])

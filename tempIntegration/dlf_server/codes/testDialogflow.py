@@ -75,7 +75,7 @@ def customanswer(intent,input_os_norm):
     
     
         
-    try:    
+    try:
         answer=intentdict[os_norm]
     except KeyError:
         for key in intentdict.keys():
