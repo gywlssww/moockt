@@ -18,7 +18,7 @@
  
 
 ## 시스템 통합 버전
-- moockt-1
+- https://github.com/yangjae33/moockt
 
 
 
