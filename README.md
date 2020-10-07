@@ -7,6 +7,7 @@
   1.AIML
   
   2.Dialogflow Chatbot
+   - QnA dataset 생성 [Question-Anwser 쌍의 csv 파일을 intent 별 json 파일로 저장] : generate_dataset.py 실행
    - os_chatbot.py 실행 
   
        - 카카오톡 서버 연동 코드 : os_chatbot.py
@@ -16,9 +17,8 @@
   
  
 
-## To-Do's (~9/14)
-  - 시스템 통합
-  - 챗봇 모델 튜닝 
-  - QnA 자동 생성 NLP Model
+## 시스템 통합 버전
+- moockt-1
+
 
 
