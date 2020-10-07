@@ -26,6 +26,7 @@ def detect_intent(question):
         intent=res['queryResult']['intent']['displayName']
         os_norm=res['queryResult']['parameters']['os_norm']
         os_norm_str=''.join(os_norm)
+        os_norm_str=os_norm_str.replace(" ","")
         print("%s - %s"%(intent,os_norm_str))
         
         if intent =="contrast" and len(os_norm)>1:
