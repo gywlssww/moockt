@@ -30,7 +30,12 @@ content = ""
 #     val = row[1]
 #     if str(key) not in dict:
 #         dict[str(key)] = []
-#     dict[str(key)].append(val)
+#         dict[str(key)].append(val)
+#     else:
+#         if int(dict[str(key)][-1])+10>int(val):
+#             pass
+#         else:
+#             dict[str(key)].append(val)        
 
 # fw = open('script_word.pickle','wb')
 # pickle.dump(dict,fw)
@@ -38,9 +43,11 @@ content = ""
 # fr = open('script_word.pickle','rb')
 # loaded = pickle.load(fr)
 
-# print(len(loaded['제일']))
-data = dict()
-data['contents'] = ">안녕"
-if len(data['contents'])>0 and data['contents'][0]=='>':
-    print(data['contents'])
-    print(data['contents'][1:])
+# print(loaded['제일'][0])
+# print(loaded['제일'][1])
+
+# data = dict()
+# data['contents'] = ">안녕"
+# if len(data['contents'])>0 and data['contents'][0]=='>':
+#     print(data['contents'])
+#     print(data['contents'][1:])
