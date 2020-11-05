@@ -70,4 +70,4 @@ def generate_qnaset(filepath_toload="../data/os_qna.csv",filepath_tosave="../dat
                 json.dump(qna_dataset[intent], outfile, ensure_ascii=False)
 
 if __name__ == "__main__":
-    generate_dataset()
+    generate_qnaset()
